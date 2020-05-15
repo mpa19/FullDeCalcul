@@ -12,6 +12,7 @@ public class Cell {
         this.val = exp.evaluate();
     }
 
+
     public MaybeValue evaluate() {
         return this.val;
     }
