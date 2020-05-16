@@ -1,10 +1,17 @@
+package reference;
+
+import cell.Cell;
+import expression.Expression;
+import maybeValue.MaybeValue;
+
 import java.util.Set;
 
 public class Reference implements Expression {
     private Set<Cell> cell;
+    private Cell cl;
 
     public Reference(Cell ref){
-        this.cell.add(ref);
+        this.cl = ref;
     }
     @Override
     public Set<Cell> references() {
@@ -13,6 +20,6 @@ public class Reference implements Expression {
 
     @Override
     public MaybeValue evaluate() {
-        return null;
+        return cl.evaluate();
     }
 }

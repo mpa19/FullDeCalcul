@@ -1,3 +1,9 @@
+package cell;
+
+import expression.Expression;
+import maybeValue.MaybeValue;
+import maybeValue.NoValue;
+
 public class Cell {
     private Expression exp;
     private MaybeValue val;

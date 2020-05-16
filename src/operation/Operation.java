@@ -1,3 +1,8 @@
+package operation;
+
+import cell.Cell;
+import expression.Expression;
+
 import java.util.Set;
 
 public abstract class Operation implements Expression {
@@ -16,8 +21,5 @@ public abstract class Operation implements Expression {
         return null;
     }
 
-    @Override
-    public MaybeValue evaluate() {
-        return null;
-    }
+
 }

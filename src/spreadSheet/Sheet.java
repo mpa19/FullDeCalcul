@@ -1,3 +1,7 @@
+package spreadSheet;
+
+import cell.Cell;
+
 import java.util.HashMap;
 
 public class Sheet {

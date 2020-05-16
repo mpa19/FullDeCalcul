@@ -1,3 +1,7 @@
+package maybeValue;
+
+import maybeValue.MaybeValue;
+
 public class SomeValue extends MaybeValue {
 
     private int value;
@@ -7,7 +11,7 @@ public class SomeValue extends MaybeValue {
         this.value = value;
     }
 
-    int getValue(){
+    public int getValue(){
         return value;
     }
 

@@ -1,3 +1,8 @@
+package maybeValue;
+
+import cell.Cell;
+import expression.Expression;
+
 import java.util.Set;
 
 public abstract class MaybeValue implements Expression {
@@ -7,7 +12,7 @@ public abstract class MaybeValue implements Expression {
     public MaybeValue(boolean value){
         this.value = value;
     }
-    boolean hasValue() {
+    public boolean hasValue() {
         return value;
     }
 
