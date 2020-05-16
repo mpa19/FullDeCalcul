@@ -1,7 +1,5 @@
 package maybeValue;
 
-import maybeValue.MaybeValue;
-
 public class SomeValue extends MaybeValue {
 
     private int value;

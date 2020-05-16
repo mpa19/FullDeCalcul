@@ -47,12 +47,12 @@ public class SpreadSheet {
             Reference a = new Reference(SHEET.getSheet().get(ref1));
             Reference b = new Reference(SHEET.getSheet().get(ref2));
 
-            return  new Mult(a.evaluate(),b.evaluate());
+            return  new Mult(a,b);
         }
 
         public static Expression mult(Expression exp1, Expression exp2) {
 
-            return  new Mult(exp1.evaluate(),exp2.evaluate());
+            return  new Mult(exp1,exp2);
         }
 
 

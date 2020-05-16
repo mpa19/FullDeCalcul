@@ -12,14 +12,13 @@ class SpreadSheetTest {
     @BeforeEach
     public void setUpSheet() {
         //spreadSheet.SpreadSheet.put("a3", 42);
-
-        put("a3", SpreadSheet.mult(get("a1"), get("a2")));
         put("a1", 5);
         put("a2", 6);
+        put("a3", SpreadSheet.mult("a1", "a2"));
+        put("a4", SpreadSheet.mult(get("a1"), get("a2")));
+
+
     }
-
-
-
 
     @Test
     public void cell_has_no_value_if_depends_on_empty_cells() {
@@ -30,5 +29,11 @@ class SpreadSheetTest {
     public void cell_has_value() {
 
         assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("a3")).getValue());
+    }
+
+    @Test
+    public void cell1_has_value() {
+
+        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("a4")).getValue());
     }
 }

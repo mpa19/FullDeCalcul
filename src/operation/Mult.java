@@ -10,7 +10,7 @@ public class Mult extends Operation {
     public Mult(Expression e1, Expression e2) {
         super(e1, e2);
         if(e1.evaluate().hasValue() && e2.evaluate().hasValue()){
-            operate(((SomeValue) e1).getValue(), ((SomeValue) e2).getValue());
+            operate(((SomeValue) e1.evaluate()).getValue(), ((SomeValue) e2.evaluate()).getValue());
         }
 
     }
