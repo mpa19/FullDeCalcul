@@ -22,49 +22,49 @@ class SpreadSheetTest {
 
     @Test
     public void mult_ref_ref() {
-        put("a3", mult("a1", "a2"));
-        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("a3")).getValue());
+        put("a4", mult("a1", "a2"));
+        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("a4")).getValue());
     }
 
     @Test
     public void mult_exp_exp() {
-        put("a3", mult(get("a1"), get("a2")));
-        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("a3")).getValue());
+        put("a5", mult(get("a1"), get("a2")));
+        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("a5")).getValue());
     }
 
     @Test
     public void mult_exp_ref() {
-        put("a3", mult(get("a1"), "a2"));
-        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("a3")).getValue());
+        put("b1", mult(get("a1"), "a2"));
+        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("b1")).getValue());
     }
 
     @Test
     public void mult_val_exp() {
-        put("a3", mult(5, get("a2")));
-        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("a3")).getValue());
+        put("b2", mult(5, get("a2")));
+        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("b2")).getValue());
     }
 
     @Test
     public void mult_val_val() {
-        put("a3", mult(5, 6));
-        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("a3")).getValue());
+        put("b3", mult(5, 6));
+        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("b3")).getValue());
     }
 
     @Test
     public void mult_val_ref() {
-        put("a3", mult(5, "a2"));
-        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("a3")).getValue());
+        put("b4", mult(5, "a2"));
+        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("b4")).getValue());
     }
 
     @Test
     public void mult_ref_exp() {
-        put("a3", mult("a1", get("a2")));
-        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("a3")).getValue());
+        put("b5", mult("a1", get("b5")));
+        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("b6")).getValue());
     }
 
     @Test
     public void mult_ref_val() {
-        put("a3", mult("a1", 6));
-        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("a3")).getValue());
+        put("c1", mult("a1", 6));
+        assertEquals(new SomeValue(30).getValue(), ((SomeValue) get("c1")).getValue());
     }
 }
