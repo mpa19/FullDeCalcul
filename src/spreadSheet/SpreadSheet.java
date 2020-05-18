@@ -1,5 +1,6 @@
 package spreadSheet;
 
+import cell.Cell;
 import expression.Expression;
 import maybeValue.MaybeValue;
 import maybeValue.SomeValue;
@@ -98,7 +99,15 @@ public class SpreadSheet {
             SHEET.getSheet().get(name).set(exp);
         }
 
+        public static void put(String name, String refName) {
+            SHEET.getSheet().get(name).set(new Reference(SHEET.getSheet().get(refName)));
+        }
+
         public static MaybeValue get(String name) {
             return SHEET.getSheet().get(name).evaluate();
+        }
+
+        public static void clear() {
+            SHEET.getSheet().replaceAll( (k,v)->v=new Cell());
         }
 }
