@@ -1,6 +1,6 @@
 package maybeValue;
 
-public class SomeValue extends MaybeValue {
+public class SomeValue extends MaybeValue  {
 
     private int value;
 
@@ -17,4 +17,5 @@ public class SomeValue extends MaybeValue {
     public MaybeValue evaluate() {
         return this;
     }
+
 }

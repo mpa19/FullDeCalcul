@@ -11,8 +11,9 @@ class SpreadSheetTest {
 
     @BeforeEach
     public void setUpSheet() {
-        put("a1", 5);
         put("a2", 6);
+        put("a1", 5);
+
     }
 
     @Test
@@ -20,7 +21,13 @@ class SpreadSheetTest {
         assertFalse(get("a3").hasValue());
     }
 
-
+    @Test
+    public void mult_ref_ref2() {
+        //put("a3", "a4");
+        put("a3", mult("a1", "a4"));
+        put("a4", 5);
+        assertEquals(new SomeValue(25).getValue(), ((SomeValue) get("a3")).getValue());
+    }
 
     /* ------------------------------ Mult Operation ----------------------------- */
 
