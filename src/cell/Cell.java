@@ -9,7 +9,6 @@ import java.util.*;
 public class Cell extends Observable implements Observer {
     private Expression exp;
     private MaybeValue val;
-    private List<Cell> subjects = new ArrayList<>();
 
     public Cell() {
         this.exp = NoValue.INSTANCE;
@@ -29,13 +28,15 @@ public class Cell extends Observable implements Observer {
     }
 
 
-
     public MaybeValue evaluate() {
         return this.val;
     }
 
     @Override
     public void update(Observable o, Object arg) {
+
         this.val = exp.evaluate();
+        setChanged();
+        notifyObservers();
     }
 }

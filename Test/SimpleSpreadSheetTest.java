@@ -7,7 +7,7 @@ import static spreadSheet.SpreadSheet.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class SpreadSheetTest {
+class SimpleSpreadSheetTest {
 
     @BeforeEach
     public void setUpSheet() {
@@ -21,14 +21,6 @@ class SpreadSheetTest {
         assertFalse(get("a3").hasValue());
     }
 
-    @Test
-    public void mult_ref_ref2() {
-        //put("a3", "a4");
-        put("a3", mult(plus("a1", "b2"), "a4"));
-        put("a4", 5);
-        put("b2", plus("a1", "b1"));
-        assertEquals(new SomeValue(55).getValue(), ((SomeValue) get("a3")).getValue());
-    }
 
     /* ------------------------------ Mult Operation ----------------------------- */
 
