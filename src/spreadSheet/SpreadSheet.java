@@ -108,6 +108,6 @@ public class SpreadSheet {
         }
 
         public static void clear() {
-            SHEET.getSheet().replaceAll( (k,v)->v=new Cell());
+            SHEET.clear();
         }
 }

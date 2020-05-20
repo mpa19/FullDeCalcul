@@ -3,8 +3,6 @@ package cell;
 import expression.Expression;
 import maybeValue.MaybeValue;
 import maybeValue.NoValue;
-import maybeValue.SomeValue;
-import reference.Reference;
 
 import java.util.*;
 
@@ -19,32 +17,15 @@ public class Cell extends Observable implements Observer {
     }
 
 
-    /*public void set(Expression exp) {
-        this.exp = exp;
-        this.val = exp.evaluate();
-        if(exp instanceof Reference) {
-            this.addObserver((Reference) exp);
-            ((Reference) exp).setRef(this);
-        }
-        else {
-            setChanged();
-            notifyObservers();
-        }
-    }*/
-
     public void set(Expression exp) {
         this.exp = exp;
         this.val = exp.evaluate();
 
-        if(exp instanceof SomeValue) {
-            setChanged();
-            notifyObservers();
-        } else {
-            for (Cell s : exp.references()) {
-                s.addObserver(this);
-            }
+        for (Cell s : exp.references()) {
+            s.addObserver(this);
         }
-
+        setChanged();
+        notifyObservers();
     }
 
 

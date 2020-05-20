@@ -5,8 +5,6 @@ import expression.Expression;
 import maybeValue.MaybeValue;
 import maybeValue.NoValue;
 import maybeValue.SomeValue;
-import operation.Operation;
-import reference.Reference;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -3,10 +3,10 @@ package operation;
 import cell.Cell;
 import expression.Expression;
 import maybeValue.MaybeValue;
+import maybeValue.NoValue;
 import maybeValue.SomeValue;
 
 import java.util.HashSet;
-import java.util.Observer;
 import java.util.Set;
 
 public abstract class Operation implements Expression {
@@ -34,6 +34,6 @@ public abstract class Operation implements Expression {
             int sol = operate(((SomeValue) this.exp1.evaluate()).getValue(), ((SomeValue) this.exp2.evaluate()).getValue());
             return new SomeValue(sol);
         }
-        return null;
+        return NoValue.INSTANCE;
     }
 }

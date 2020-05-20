@@ -17,4 +17,8 @@ public class Sheet {
     }
 
     public HashMap<String, Cell> getSheet() { return sheet; }
+
+    public void clear() {
+        sheet.replaceAll( (k,v)->v=new Cell());
+    }
 }

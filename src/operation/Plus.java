@@ -1,12 +1,10 @@
 package operation;
 
-import cell.Cell;
 import expression.Expression;
 import maybeValue.MaybeValue;
 import maybeValue.NoValue;
 import maybeValue.SomeValue;
 
-import java.util.Set;
 
 public class Plus extends Operation {
     public Plus(Expression e1, Expression e2) {
