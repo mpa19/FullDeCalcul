@@ -34,9 +34,9 @@ public class Cell extends Observable implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-
         this.val = exp.evaluate();
         setChanged();
         notifyObservers();
     }
+
 }

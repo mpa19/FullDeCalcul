@@ -5,7 +5,9 @@ import cell.Cell;
 import java.util.HashMap;
 
 public class Sheet {
-    private String[] column = new String[]{"a", "b", "c", "d", "e", "f"};
+    private String[] column = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+                                            "l", "m", "n", "o", "p", "q", "r", "s", "t", "u","v",
+                                            "v", "w", "x", "y", "z"};
     private HashMap<String, Cell> sheet = new HashMap<>();
     public Sheet(int size) {
 

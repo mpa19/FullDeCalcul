@@ -92,7 +92,7 @@ public class SpreadSheet {
         }
 
          public static void put(String name, int value) {
-             SHEET.getSheet().get(name).set(new SomeValue(value).evaluate());
+             SHEET.getSheet().get(name).set(new SomeValue(value));
          }
 
         public static void put(String name, Expression exp) {
