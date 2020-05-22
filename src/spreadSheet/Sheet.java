@@ -3,6 +3,7 @@ package spreadSheet;
 import cell.Cell;
 
 import java.util.HashMap;
+import java.util.NoSuchElementException;
 
 public class Sheet {
     private String[] column = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
@@ -18,7 +19,9 @@ public class Sheet {
         }
     }
 
-    public HashMap<String, Cell> getSheet() { return sheet; }
+    public Cell getSheet(String cell) {
+        if(!sheet.containsKey(cell)) throw new NoSuchElementException();
+        return sheet.get(cell); }
 
     public void clear() {
         sheet.replaceAll( (k,v)->v=new Cell());

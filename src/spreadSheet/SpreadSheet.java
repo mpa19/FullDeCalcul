@@ -1,6 +1,5 @@
 package spreadSheet;
 
-import cell.Cell;
 import expression.Expression;
 import maybeValue.MaybeValue;
 import maybeValue.SomeValue;
@@ -15,8 +14,8 @@ public class SpreadSheet {
 
 
         public static Expression mult(String ref1, String ref2) {
-            Reference a = new Reference(SHEET.getSheet().get(ref1));
-            Reference b = new Reference(SHEET.getSheet().get(ref2));
+            Reference a = new Reference(SHEET.getSheet(ref1));
+            Reference b = new Reference(SHEET.getSheet(ref2));
             return  new Mult(a,b);
         }
 
@@ -25,7 +24,7 @@ public class SpreadSheet {
         }
 
         public static Expression mult(Expression expr1, String ref2) {
-            Reference b = new Reference(SHEET.getSheet().get(ref2));
+            Reference b = new Reference(SHEET.getSheet(ref2));
             return new Mult(expr1,b);
         }
 
@@ -38,24 +37,24 @@ public class SpreadSheet {
         }
 
         public static Expression mult(int value1, String ref2) {
-            Reference b = new Reference(SHEET.getSheet().get(ref2));
+            Reference b = new Reference(SHEET.getSheet(ref2));
             return new Mult(new SomeValue(value1), b);
         }
 
         public static Expression mult(String ref1, Expression expr2) {
-            Reference b = new Reference(SHEET.getSheet().get(ref1));
+            Reference b = new Reference(SHEET.getSheet(ref1));
             return new Mult(b, expr2);
         }
 
         public static Expression mult(String ref1, int value2) {
-            Reference b = new Reference(SHEET.getSheet().get(ref1));
+            Reference b = new Reference(SHEET.getSheet(ref1));
             return new Mult(b, new SomeValue(value2));
         }
 
 
         public static Expression plus(String ref1, String ref2) {
-            Reference a = new Reference(SHEET.getSheet().get(ref1));
-            Reference b = new Reference(SHEET.getSheet().get(ref2));
+            Reference a = new Reference(SHEET.getSheet(ref1));
+            Reference b = new Reference(SHEET.getSheet(ref2));
             return  new Plus(a,b);
         }
 
@@ -64,7 +63,7 @@ public class SpreadSheet {
         }
 
         public static Expression plus(Expression expr1, String ref2) {
-            Reference b = new Reference(SHEET.getSheet().get(ref2));
+            Reference b = new Reference(SHEET.getSheet(ref2));
             return new Plus(expr1,b);
         }
 
@@ -77,34 +76,34 @@ public class SpreadSheet {
         }
 
         public static Expression plus(int value1, String ref2) {
-            Reference b = new Reference(SHEET.getSheet().get(ref2));
+            Reference b = new Reference(SHEET.getSheet(ref2));
             return new Plus(new SomeValue(value1), b);
         }
 
         public static Expression plus(String ref1, Expression expr2) {
-            Reference b = new Reference(SHEET.getSheet().get(ref1));
+            Reference b = new Reference(SHEET.getSheet(ref1));
             return new Plus(b, expr2);
         }
 
         public static Expression plus(String ref1, int value2) {
-            Reference b = new Reference(SHEET.getSheet().get(ref1));
+            Reference b = new Reference(SHEET.getSheet(ref1));
             return new Plus(b, new SomeValue(value2));
         }
 
          public static void put(String name, int value) {
-             SHEET.getSheet().get(name).set(new SomeValue(value));
+             SHEET.getSheet(name).set(new SomeValue(value));
          }
 
         public static void put(String name, Expression exp) {
-            SHEET.getSheet().get(name).set(exp);
+            SHEET.getSheet(name).set(exp);
         }
 
         public static void put(String name, String refName) {
-            SHEET.getSheet().get(name).set(new Reference(SHEET.getSheet().get(refName)));
+            SHEET.getSheet(name).set(new Reference(SHEET.getSheet(refName)));
         }
 
         public static MaybeValue get(String name) {
-            return SHEET.getSheet().get(name).evaluate();
+            return SHEET.getSheet(name).evaluate();
         }
 
         public static void clear() {
