@@ -30,18 +30,18 @@ class ComplexSpreadSheetTest {
     public void complex1() {
         put("a4", 5);
         put("b3", plus("a1", "b1"));
-        assertEquals(new SomeValue(200).getValue(), ((SomeValue) get("a3")).getValue());
+        assertEquals(new SomeValue(200), get("a3"));
     }
 
     @Test
     public void complex2() {
-        assertEquals(new SomeValue(1400).getValue(), ((SomeValue) get("c3")).getValue());
+        assertEquals(new SomeValue(1400), get("c3"));
     }
 
     @Test
     public void complex3() {
         put("a1", "b1");
-        assertEquals(new SomeValue(1600).getValue(), ((SomeValue) get("c3")).getValue());
+        assertEquals(new SomeValue(1600), get("c3"));
     }
 
 

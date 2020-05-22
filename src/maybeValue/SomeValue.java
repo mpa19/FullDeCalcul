@@ -5,17 +5,26 @@ public class SomeValue extends MaybeValue  {
     private int value;
 
     public SomeValue(int value){
-        super(true);
         this.value = value;
     }
 
     public int getValue(){
-        return value;
+        return this.value;
+    }
+
+
+    @Override
+    public boolean hasValue() {
+        return true;
     }
 
     @Override
-    public MaybeValue evaluate() {
-        return this;
-    }
+    public boolean equals(Object obj){
+        if (obj == null || (this.getClass() != obj.getClass())) {
+            return false;
+        }
 
+        SomeValue objSomeValue = (SomeValue) obj;
+        return getValue() == objSomeValue.getValue();
+    }
 }

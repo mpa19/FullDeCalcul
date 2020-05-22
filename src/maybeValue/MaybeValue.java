@@ -4,24 +4,21 @@ import cell.Cell;
 import expression.Expression;
 
 import java.util.HashSet;
-import java.util.Observable;
 import java.util.Set;
 
 public abstract class MaybeValue implements Expression {
 
-    boolean value;
 
-    public MaybeValue(boolean value){
-        this.value = value;
-    }
-    public boolean hasValue() {
-        return value;
-    }
+    public abstract boolean hasValue();
 
     @Override
     public Set<Cell> references() {
         return new HashSet<>();
     }
 
+    @Override
+    public MaybeValue evaluate() {
+        return this;
+    }
 
 }
