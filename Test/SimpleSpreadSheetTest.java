@@ -3,6 +3,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.NoSuchElementException;
+
 import static spreadSheet.SpreadSheet.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,6 +23,12 @@ class SimpleSpreadSheetTest {
         assertFalse(get("a3").hasValue());
     }
 
+
+    @Test
+    public void cell_dosent_exist() {
+
+        assertThrows(NoSuchElementException.class,() -> get("t3"));
+    }
 
     /* ------------------------------ Mult Operation ----------------------------- */
 
